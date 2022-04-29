@@ -9,7 +9,7 @@ class Context {
      * The Context allows changing the State object at runtime.
      */
     transitionTo(state) {
-        console.log(`Context: Transition to ${state.constructor.name}.`);
+        // console.log(`Context: Transition to ${(<any>state).constructor.name}.`);
         this.state = state;
         this.state.setContext(this);
     }
@@ -40,8 +40,8 @@ class EnableState extends State {
         return this.state;
     }
     handleState() {
-        console.log("Enable handles reqGetState.");
-        console.log("Enable wants to change the state of the context.");
+        // console.log("Enable handles reqGetState.");
+        // console.log("Enable wants to change the state of the context.");
         this.context.transitionTo(new DisabledState());
     }
 }
@@ -56,8 +56,8 @@ class DisabledState extends State {
         return this.state;
     }
     handleState() {
-        console.log("Disabled handles reqHandleState.");
-        console.log("Disabled wants to change the state of the context.");
+        // console.log("Disabled handles reqHandleState.");
+        // console.log("Disabled wants to change the state of the context.");
         this.context.transitionTo(new EnableState());
     }
 }

@@ -6,8 +6,10 @@ exports.Composite = exports.Leaf = exports.Component = void 0;
  * complex objects of a composition.
  */
 class Component {
-    constructor(enable) {
+    constructor(enable, name, type) {
         this.enable = enable;
+        this.name = name;
+        this.type = type;
     }
     /**
      * Optionally, the base Component can declare an interface for setting and
@@ -22,6 +24,9 @@ class Component {
     }
     getState() {
         return this.enable.reqGetState();
+    }
+    handleState() {
+        return this.enable.reqHandleState();
     }
     /**
      * In some cases, it would be beneficial to define the child-management
@@ -50,7 +55,12 @@ exports.Component = Component;
  */
 class Leaf extends Component {
     operation() {
-        return "Leaf";
+        return {
+            name: this.name,
+            type: this.type,
+            enabled: this.enable.reqGetState(),
+            leaf: !this.isComposite(),
+        };
     }
 }
 exports.Leaf = Leaf;
@@ -91,7 +101,13 @@ class Composite extends Component {
         for (const child of this.children) {
             results.push(child.operation());
         }
-        return `Branch(${results.join("+")})`;
+        return {
+            name: this.name,
+            type: this.type,
+            enabled: this.enable.reqGetState(),
+            leaf: !this.isComposite(),
+            children: results,
+        };
     }
 }
 exports.Composite = Composite;

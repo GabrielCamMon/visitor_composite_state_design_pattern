@@ -7,6 +7,7 @@ const port = process.env.PORT || 3000;
 const dotenv = require("dotenv");
 const index = require("./routers/index");
 const menuRouter = require("./routers/menuRouter");
+const foodRouter = require("./routers/menuRouter");
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(cors({ origin: "*" }));
 app.use("/api", index);
 app.use("/api/menu", menuRouter);
+app.use("/api/food", foodRouter);
 
 const publicPath = path.join(__dirname, "..", "client/dist");
 app.use(express.static(publicPath));

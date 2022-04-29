@@ -8,10 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-const MenuBll_1 = require("../bll/MenuBll");
 exports.get = (req, res, next) => {
-    res.json((0, MenuBll_1.CreateMenu)());
+    res.send("Requisição recebida com sucesso!");
 };
 exports.post = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     res.send("Requisição recebida com sucesso!");
