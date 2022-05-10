@@ -22,20 +22,30 @@ function CreateMenu() {
     const menu21 = new MenuLeafModel_1.LeafMenu(new IStateMenuComponent_1.Context(new EnabledStateModal_1.EnableState()), "Dishes", "dishes");
     const menu22 = new MenuLeafModel_1.LeafMenu(new IStateMenuComponent_1.Context(new EnabledStateModal_1.EnableState()), "Hamburguer", "hamburguer");
     //Menu3 Leaf
-    const menu3 = new MenuLeafModel_1.LeafMenu(new IStateMenuComponent_1.Context(new EnabledStateModal_1.EnableState()), "Saladas", "salada");
+    const menu3 = new MenuCompositeModel_1.CompositeMenu(new IStateMenuComponent_1.Context(new EnabledStateModal_1.EnableState()), "Saladas", "salada");
+    // //Submenu of Menu2
+    const menu31 = new MenuLeafModel_1.LeafMenu(new IStateMenuComponent_1.Context(new EnabledStateModal_1.EnableState()), "Vegetables", "vegetables");
+    // //Submenu of Menu2
+    const menu32 = new MenuLeafModel_1.LeafMenu(new IStateMenuComponent_1.Context(new EnabledStateModal_1.EnableState()), "Fruits", "fruits");
     // Menu 4
-    const menu4 = new MenuLeafModel_1.LeafMenu(new IStateMenuComponent_1.Context(new DisbledStateModal_1.DisabledState()), "Canibal", "humano");
+    const menu4 = new MenuLeafModel_1.LeafMenu(new IStateMenuComponent_1.Context(new EnabledStateModal_1.EnableState()), "Dessert", "dessert");
+    // Menu 4
+    const menu5 = new MenuLeafModel_1.LeafMenu(new IStateMenuComponent_1.Context(new DisbledStateModal_1.DisabledState()), "Canibal", "humano");
     //add menus on rootMenu
     rootMenu.add(menu1);
     rootMenu.add(menu2);
     rootMenu.add(menu3);
     rootMenu.add(menu4);
+    rootMenu.add(menu5);
     menu1.add(menu11);
     menu1.add(menu12);
     menu2.add(menu21);
     menu2.add(menu22);
+    menu3.add(menu31);
+    menu3.add(menu32);
     menu12.add(menu121);
     menu12.add(menu122);
+    console.log(rootMenu);
     return rootMenu.operation();
 }
 exports.CreateMenu = CreateMenu;

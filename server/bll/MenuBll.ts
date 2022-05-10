@@ -57,15 +57,37 @@ export function CreateMenu() {
   );
 
   //Menu3 Leaf
-  const menu3 = new LeafMenu(
+  const menu3 = new CompositeMenu(
     new Context(new EnableState()),
     "Saladas",
     "salada"
   );
 
+  // //Submenu of Menu2
+  const menu31 = new LeafMenu(
+    new Context(new EnableState()),
+    "Vegetables",
+    "vegetables"
+  );
+
+  // //Submenu of Menu2
+  const menu32 = new LeafMenu(
+    new Context(new EnableState()),
+    "Fruits",
+    "fruits"
+  );
+
   // Menu 4
 
   const menu4 = new LeafMenu(
+    new Context(new EnableState()),
+    "Dessert",
+    "dessert"
+  );
+
+  // Menu 4
+
+  const menu5 = new LeafMenu(
     new Context(new DisabledState()),
     "Canibal",
     "humano"
@@ -76,14 +98,17 @@ export function CreateMenu() {
   rootMenu.add(menu2);
   rootMenu.add(menu3);
   rootMenu.add(menu4);
+  rootMenu.add(menu5);
 
   menu1.add(menu11);
   menu1.add(menu12);
   menu2.add(menu21);
   menu2.add(menu22);
+  menu3.add(menu31);
+  menu3.add(menu32);
 
   menu12.add(menu121);
   menu12.add(menu122);
-
+  console.log(rootMenu);
   return rootMenu.operation();
 }

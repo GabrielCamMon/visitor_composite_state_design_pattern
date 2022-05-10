@@ -5,14 +5,19 @@ import Banner from "../../components/Home/Banner";
 import Itens from "../../components/common/Itens";
 import { menuItemsData } from "../../redux/datas/foods";
 import Header from "../../components/common/Header";
+import selectorFood from "../../selectors/foods";
 
 const Home = () => {
   const menuRef = useRef();
+  const [type, setType] = useState("");
 
   const handleScrollMenu = () => {
     menuRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleType = (type) => {
+    setType(type);
+  };
   return (
     <div>
       <Banner handleScrollMenu={handleScrollMenu} />
@@ -20,9 +25,9 @@ const Home = () => {
         ref={menuRef}
         style={{ position: "relative", marginBottom: "100px" }}
       >
-        <Header />
+        <Header handleType={handleType} />
       </div>
-      <Itens list={menuItemsData} />
+      <Itens list={selectorFood(menuItemsData, type)} />
       <Footer />
       <ButtonCartCount />
     </div>

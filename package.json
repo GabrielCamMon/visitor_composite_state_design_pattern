@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --open --mode development --hot",
     "build": "webpack --mode production",
-    "start": "nodemon --exec babel-node -- server/index.js",
+    "start": "babel-node -- dist/index.js",
     "devts": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
   },
   "author": "",

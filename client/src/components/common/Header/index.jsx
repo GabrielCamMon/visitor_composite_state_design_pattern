@@ -4,7 +4,7 @@ import "./styles.css";
 import menuService from "../../../services/menuService";
 import { v4 as uuidv4 } from "uuid";
 
-const Header = () => {
+const Header = (props) => {
   const [menu, setMenu] = useState(null);
 
   useEffect(() => {
@@ -18,19 +18,22 @@ const Header = () => {
     })();
   }, []);
 
+  const handleType = (type) => {
+    props.handleType(type);
+  };
+
   const createMenuLoop = (menu) => {
     return menu.children.map((e, i) => {
       if (e.leaf) {
         return (
           <li key={uuidv4()} name={e.type}>
-            <a>{e.name}</a>
+            <a onClick={() => handleType(e.type)}>{e.name}</a>
           </li>
         );
       } else {
-        console.log(e);
         return (
-          <li>
-            <a name={e.type}>
+          <li key={uuidv4()}>
+            <a onClick={() => handleType(e.type)} name={e.type}>
               {e.name} <i className="fa-solid fa-caret-down"></i>
             </a>
             <ul key={uuidv4()} className="sub-menu">
@@ -50,7 +53,7 @@ const Header = () => {
             <a
               name={e.type}
               style={!e.enabled ? { color: "#ccc" } : {}}
-              onClick={() => console.log("funfou")}
+              onClick={() => handleType(e.type)}
             >
               {e.name}
             </a>
@@ -59,7 +62,7 @@ const Header = () => {
       } else {
         return (
           <li key={uuidv4()}>
-            <a name={e.type}>
+            <a name={e.type} onClick={() => handleType(e.type)}>
               {e.name} <i className="fa-solid fa-caret-down"></i>
             </a>
 
@@ -82,7 +85,12 @@ const Header = () => {
             <i className="fa-solid fa-utensils"></i>
           </a>
 
-          <ul className="nav-list">{menu && createMenu(menu)}</ul>
+          <ul className="nav-list">
+            <li key={uuidv4()}>
+              <a onClick={() => handleType("")}>All</a>
+            </li>
+            {menu && createMenu(menu)}
+          </ul>
         </nav>
       </div>
     </header>

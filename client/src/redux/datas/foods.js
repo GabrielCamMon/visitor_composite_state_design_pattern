@@ -1,23 +1,26 @@
 export const menuItemsData = [
   {
     id: 1,
-    name: "Mediterranean  Salad",
+    name: "Hamburguer",
     info: "spicey with garlic and then deep fried to crispy perfection",
     price: 24,
-    img: "/images/kisspng-hamburger-street-food-seafood-fast-food-delicious-food-5a75083cceaf41.2676743415176192608466.png",
+    type: ["hamburguer"],
+    img: "/images/bigBurger.png",
   },
   {
     id: 2,
     name: "Summer Asian Slaw",
     info: "spicey with garlic and then deep fried to crispy perfection",
     price: 24,
+    type: ["salada", "vegetables"],
     img: "/images/bowl1.png",
   },
   {
     id: 3,
-    name: "Burger",
+    name: "Salad",
     info: "spicey with garlic and then deep fried to crispy perfection",
     price: 24,
+    type: ["salada", "vegetables"],
     img: "/images/bowl2.png",
   },
   {
@@ -25,6 +28,7 @@ export const menuItemsData = [
     name: "white sauce pasta",
     info: "spicey with garlic and then deep fried to crispy perfection",
     price: 24,
+    type: ["massa", "noodle"],
     img: "/images/bowl3.png",
   },
   {
@@ -32,6 +36,7 @@ export const menuItemsData = [
     name: "butterfly pasta",
     info: "spicey with garlic and then deep fried to crispy perfection",
     price: 24,
+    type: ["massa", "noodle"],
     img: "/images/bowl4.png",
   },
   {
@@ -39,6 +44,7 @@ export const menuItemsData = [
     name: "tooty fruity bowl",
     info: "spicey with garlic and then deep fried to crispy perfection",
     price: 24,
+    type: ["salada", "fruits"],
     img: "/images/fruits.png",
   },
   {
@@ -46,13 +52,15 @@ export const menuItemsData = [
     name: "granola cereal bowl",
     info: "spicey with garlic and then deep fried to crispy perfection",
     price: 24,
+    type: ["dessert"],
     img: "/images/granola cereal bowl.png",
   },
   {
     id: 8,
-    name: "palm bowl",
+    name: "Açaí With Fruits",
     info: "spicey with garlic and then deep fried to crispy perfection",
     price: 24,
+    type: ["salada", "fruits"],
     img: "/images/kisspng-aa-na-tigela-smoothie-aa-palm-bowl-apple-j-goji-berry-5b306ffe7baf07.9992682215299010545066.png",
   },
   {
@@ -60,6 +68,7 @@ export const menuItemsData = [
     name: "tigela smoothie",
     info: "spicey with garlic and then deep fried to crispy perfection",
     price: 24,
+    type: ["salada", "vegetables"],
     img: "/images/kisspng-aa-na-tigela-smoothie-breakfast-juice-health-s-acai-bowl-5b11d2604db908.6695630315278946243184.png",
   },
   {
@@ -67,6 +76,7 @@ export const menuItemsData = [
     name: "breakfast cereal",
     info: "spicey with garlic and then deep fried to crispy perfection",
     price: 24,
+    type: ["dessert"],
     img: "/images/kisspng-breakfast-cereal-pizza-muesli-meze-vegetarian-cuis-granola-5ac48d852aeb69.1891892315228307251758.png",
   },
   {
@@ -74,6 +84,7 @@ export const menuItemsData = [
     name: "cuisine of hawaii",
     info: "spicey with garlic and then deep fried to crispy perfection",
     price: 24,
+    type: ["massa", "noodle"],
     img: "/images/kisspng-cuisine-of-hawaii-l-l-hawaiian-barbecue-shrimp-gam-frozen-chicken-5b1e62f3a9e035.2766282415287180676958.png",
   },
   {
@@ -81,6 +92,7 @@ export const menuItemsData = [
     name: "fried chicken",
     info: "spicey with garlic and then deep fried to crispy perfection",
     price: 24,
+    type: ["meets", "dishes"],
     img: "/images/kisspng-fried-chicken-lemon-chicken-chicken-meat-fine-dining-chicken-meat-5a940a1b75aa22.821205431519651355482.png",
   },
   {
@@ -88,27 +100,31 @@ export const menuItemsData = [
     name: "greek salad",
     info: "spicey with garlic and then deep fried to crispy perfection",
     price: 24,
+    type: ["salada", "vegetables"],
     img: "/images/kisspng-greek-salad-fruit-salad-spinach-salad-muesli-vegetable-salad-5a96f429ce9af3.7299622115198423458463.png",
   },
   {
     id: 14,
-    name: "hamburger",
+    name: "Salad With Fish",
     info: "spicey with garlic and then deep fried to crispy perfection",
     price: 24,
-    img: "/images/bigBurger.png",
+    type: ["salada", "vegetables"],
+    img: "/images/kisspng-hamburger-street-food-seafood-fast-food-delicious-food-5a75083cceaf41.2676743415176192608466.png",
   },
   {
     id: 15,
     name: "israeli salad",
     info: "spicey with garlic and then deep fried to crispy perfection",
     price: 24,
+    type: ["salada", "vegetables"],
     img: "/images/kisspng-israeli-salad-european-cuisine.png",
   },
   {
     id: 16,
-    name: "Pizza Pasta",
+    name: "Meet Disher",
     info: "spicey with garlic and then deep fried to crispy perfection",
     price: 24,
+    type: ["meets", "dishes"],
     img: "/images/kisspng-italian-cuisine-pizza-pasta-food-plate-healthy-food-5abb864701e2b7.3892346415222390470077.png",
   },
   {
@@ -116,6 +132,7 @@ export const menuItemsData = [
     name: "Pizza",
     info: "spicey with garlic and then deep fried to crispy perfection",
     price: 24,
+    type: ["massa", "pizza"],
     img: "/images/pizza.png",
   },
 ];
