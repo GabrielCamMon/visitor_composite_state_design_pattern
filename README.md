@@ -1,16 +1,16 @@
 # visitor_composite_state_design_pattern
 
-##Install
+## Install
 
 ```sh
 npm install 
 ```
 
-##Build
+## Build
 ```sh
 npm run build
 ```
-##Exec
+## Exec
 ```sh
 npm run devts
 ```
